@@ -31,6 +31,7 @@ public class ArticlesController : Controller
         }
 
         var article = await _context.Articles
+            .Include(a => a.Category)
             .FirstOrDefaultAsync(m => m.Id == id);
         if (article == null)
         {
@@ -108,6 +109,7 @@ public class ArticlesController : Controller
 
         if (ModelState.IsValid)
         {
+
             try
             {
                 _context.Update(article);
@@ -143,7 +145,8 @@ public class ArticlesController : Controller
         }
 
         var article = await _context.Articles
-            .FirstOrDefaultAsync(m => m.Id == id);
+    .Include(a => a.Category)
+    .FirstOrDefaultAsync(m => m.Id == id);
         if (article == null)
         {
             return NotFound();

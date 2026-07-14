@@ -1,52 +1,62 @@
 @model ITKnowledgeBase.Models.Article
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Makale Detayı";
 }
 
-<h1>Details</h1>
+<h1>Makale Detayı</h1>
 
-<div>
-    <h4>Article</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatedDate)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryId)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="card shadow">
+
+    <div class="card-header">
+        <h3>@Model.Title</h3>
+    </div>
+
+    <div class="card-body">
+
+        <dl class="row">
+
+            <dt class="col-sm-3">
+                Kategori
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.Category?.Name
+            </dd>
+
+            <dt class="col-sm-3">
+                Oluşturulma Tarihi
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.CreatedDate.ToString("dd.MM.yyyy")
+            </dd>
+
+            <dt class="col-sm-3">
+                İçerik
+            </dt>
+
+            <dd class="col-sm-9">
+                <p>@Model.Content</p>
+            </dd>
+
+        </dl>
+
+    </div>
+
+    <<div class="card-footer d-flex gap-2">
+
+        <a asp-action="Edit"
+           asp-route-id="@Model.Id"
+           class="btn btn-warning">
+            ✏️ Düzenle
+        </a>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+            ← Listeye Dön
+        </a>
+      
+    </div>
+
 </div>
