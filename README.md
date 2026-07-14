@@ -27,25 +27,25 @@ A modern IT Knowledge Base application developed with **ASP.NET Core MVC**, **En
 
 ## Home
 
-![Home](images/home.png)
+![Home](Images/home.png)
 
 ---
 
 ## Categories
 
-![Categories](images/categories.png)
+![Categories](Images/categories.png)
 
 ---
 
 ## Articles
 
-![Articles](images/articles.png)
+![Articles](Images/articles.png)
 
 ---
 
 ## Article Details
 
-![Article Details](images/article-details.png)
+![Article Details](Images/article-details.png)
 
 
 ## ⚙️ Installation
